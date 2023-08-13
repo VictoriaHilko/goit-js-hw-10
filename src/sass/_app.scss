@@ -1,0 +1,218 @@
+.example {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #2f2f37;
+  max-width: 960px;
+  padding: 16px;
+}
+
+.example code {
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #ff6b0a;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.example .background {
+  height: 240px;
+  // ❗️❗️❗️ The path to images from a SASS file
+  // is always the same as from the css folder.
+  background-image: url('../images/logo.png');
+  background-size: cover;
+  background-position: center;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-ms-transition: all .2s;
+	-o-transition: all .2s;
+	transition: all .2s;
+}
+
+html {
+	height: 100%;
+}
+
+body { 
+	background: -webkit-linear-gradient(90deg, #93abf2 10%, #F3A183 90%); /* Chrome 10+, Saf5.1+ */
+	background:    -moz-linear-gradient(90deg, #93abf2 10%, #F3A183 90%); /* FF3.6+ */
+	background:     -ms-linear-gradient(90deg, #93abf2 10%, #F3A183 90%); /* IE10 */
+	background:      -o-linear-gradient(90deg, #93abf2 10%, #F3A183 90%); /* Opera 11.10+ */
+	background:         linear-gradient(90deg, #93abf2 10%, #F3A183 90%); /* W3C */
+	font-family: 'Raleway', sans-serif; 
+	font-size: 20px; 
+}
+
+#header-container {
+	display: block;
+  position: absolute;
+	width: 320px;
+  height: 55px;
+	left: 50%;
+  top: 50%;
+	margin-left: -160px;
+  margin-top: -87px;
+}
+
+/* Select style here */
+
+.breed-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+	color: #93abf2;
+	width: 310px;
+	padding: 15px;
+	height: 25px;
+	cursor: pointer;
+	background: url(http://sharpik.com/wip/cuteselect/arrow.png) 295px 12px no-repeat white;
+}
+
+.breed-select:hover {
+	background-color: transparent;
+	color: white;
+	padding: 15px 5px 15px 25px;
+}
+
+.breed-select option {
+	background-color: white;
+	color: gray;
+	width: 310px;
+	padding: 10px 15px;
+	height: 20px;
+	cursor: pointer;
+}
+
+.breed-select option:hover {
+	padding-left: 25px;
+	width: 270px;
+	color: #93abf2;
+}
+
+.is-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.loading-container {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  width: 400px;
+  margin: 0 auto;
+}
+
+.loader, .error {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.info-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.description {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.accent {
+  text-transform: uppercase;
+}
+
+.img {
+  width: 100%;
+}
+
+.loader-span {
+  animation: rotate 1s infinite;
+  height: 50px;
+  width: 50px;
+}
+
+.loader-span:before,
+.loader-span:after {
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+.loader-span:before {
+  animation: ball1 1s infinite;
+  background-color: #fff;
+  box-shadow: 30px 0 0 #7873ce;
+  margin-bottom: 10px;
+}
+.loader-span:after {
+  animation: ball2 1s infinite;
+  background-color: #7873ce;
+  box-shadow: 30px 0 0 #fff;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg) scale(0.8) }
+  50% { transform: rotate(360deg) scale(1.2) }
+  100% { transform: rotate(720deg) scale(0.8) }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 #7873ce;
+  }
+  50% {
+    box-shadow: 0 0 0 #7873ce;
+    margin-bottom: 0;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #7873ce;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 #fff;
+  }
+  50% {
+    box-shadow: 0 0 0 #fff;
+    margin-top: -20px;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #fff;
+    margin-top: 0;
+  }
+}
