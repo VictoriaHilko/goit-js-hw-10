@@ -1,5 +1,4 @@
 import { fetchBreeds, fetchCatByBreed } from "./cat-api";
-import SlimSelect from 'slim-select';
 import { Notify } from "notiflix";
 
 const refs = {
@@ -32,8 +31,11 @@ fetchBreeds()
         createMarkupBreedsSelect(selectedBreed);
     })
     .catch(err => {
-        console.error(err);
-        Notify.failure(`❌ ${err}`);
+        // console.error('Oops! Something went wrong! Try reloading the page!');
+        Notify.failure('Oops! Something went wrong! Try reloading the page!');
+    }).finally(() => {
+        refs.loaderText.classList.add('is-hidden');
+        refs.loaderSpan.classList.add('is-hidden');
     });
 
 
@@ -48,8 +50,11 @@ function onCatBreedSelect(event) {
 
     breedOption.then(data => createMarkupInfo(data))
     .catch(err => {
-        console.error(err);
-        Notify.failure(`❌ ${err}`);
+        // console.error('Oops! Something went wrong! Try reloading the page!');
+        Notify.failure('Oops! Something went wrong! Try reloading the page!');
+    }).finally(() => {
+        refs.loaderText.classList.add('is-hidden');
+        refs.loaderSpan.classList.add('is-hidden');
     });
 }
 
